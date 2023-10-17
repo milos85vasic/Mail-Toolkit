@@ -1,0 +1,54 @@
+plugins {
+
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+
+    compileSdk 33
+
+    defaultConfig {
+
+        minSdk 28
+        targetSdk 33
+
+        consumerProguardFiles "consumer-rules.pro"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        release {
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+
+        resources.excludes.add("META-INF/*")
+        resources.excludes.add("LICENSE-2.0.txt")
+    }
+}
+
+dependencies {
+
+}
